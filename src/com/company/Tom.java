@@ -22,11 +22,11 @@ public class Tom {
         return FIXED_ENERGY_GAIN + mouse.getWeight();
     }
 
-    public void sumEnergy(Mouse mouse){
+    public void eat(Mouse mouse){
         energy = energy + energyGained(mouse);
     }
 
-    public void diminishEnergy(int meters){
+    public void run(int meters){
         energy = energiaReducida(meters);
     }
 
