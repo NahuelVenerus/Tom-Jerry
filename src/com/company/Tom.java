@@ -14,26 +14,27 @@ public class Tom {
         return "Tom's final energy: " + energy;
     }
 
-    private int speed(){
-        int speed = 5;
-        return speed + energy/10;
+    private int calculateSpeed(){
+        return 5 + energy/10;
     }
 
-    public int eat(Mouse mouse){
-        int afterEatEnergy = energy + FIXED_ENERGY_GAIN + mouse.getWeight();
-        return afterEatEnergy;
+    public int energyGained(Mouse mouse){
+        return FIXED_ENERGY_GAIN + mouse.getWeight();
     }
 
-    public int run(int distance){
-        int runningEnergy = energy - distance/2;
-        return runningEnergy;
+    public void sumEnergy(Mouse mouse){
+        energy = energy + energyGained(mouse);
     }
 
-    public boolean iShouldEatMouse(){
-        if(run()>eat(){
-            return false;
+    public void diminishEnergy(int meters){
+        energy = energiaReducida(meters);
+    }
+
+    private int energiaReducida(int meters) {
+        return energy - meters /2;
+    }
+
+    public boolean meConvieneComerRatonA(Mouse mouse, int meters) {
+        return energyGained(mouse) > energiaReducida(meters);
         }
-        return true;
     }
-
-}
